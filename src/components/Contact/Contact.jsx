@@ -2,14 +2,15 @@ import { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { FaPencilAlt } from "react-icons/fa";
 import { CiUser, CiPhone } from "react-icons/ci";
-import BaseModal from "../common/Modal/Modal";
-import ConfirmActionModal from "../common/Modal/ConfirmActionModal/ConfirmActionModal";
+import ContactModal from "./ContactModal/ContactModal";
 import { useModal } from "../../hooks/UseModal";
 import css from "./Contact.module.css";
 
-export default function Contact({ contactData: { id, name, number } }) {
+export default function Contact({ contactData }) {
+  const { id, name, number } = contactData;
   const { modalIsOpen, openModal, closeModal } = useModal();
   const [modalType, setModalType] = useState(""); // confirming deletion; confirming update; updating
+
   // const [modalIsOpen, setModalIsOpen] = useState(false);
   // const [currentContactId, setCurrentContactId] = useState(null);
   // const [contactData, setContactData] = useState(null);
@@ -71,17 +72,13 @@ export default function Contact({ contactData: { id, name, number } }) {
           </button>
         </div>
       </li>
-      <BaseModal closeModal={closeModal} modalIsOpen={modalIsOpen}>
-        {modalType === "updating" ? (
-          "UPDATING FORM"
-        ) : (
-          <ConfirmActionModal
-            type={modalType}
-            contactId={id}
-            closeModal={closeModal}
-          />
-        )}
-      </BaseModal>
+
+      <ContactModal
+        modalType={modalType}
+        closeModal={closeModal}
+        modalIsOpen={modalIsOpen}
+        contactData={contactData}
+      />
     </>
   );
 }

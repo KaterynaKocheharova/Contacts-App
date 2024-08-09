@@ -1,10 +1,11 @@
 import { useDispatch } from "react-redux";
+import BaseModal from "../Modal";
 import Button from "../../Button/Button";
 import { buildModalButtonText, buildModalText } from "./ConfirmModalHelpers";
 import { deleteContact } from "../../../../redux/contacts/operations";
 import { activateSuccessToast } from "../../../../js/toast";
 
-const ConfirmActionModal = ({ type, contactId, closeModal }) => {
+const ConfirmActionModal = ({ type, contactId, closeModal, modalIsOpen }) => {
   const dispatch = useDispatch();
 
   const handleConfirmButtonClick = () => {
@@ -32,12 +33,12 @@ const ConfirmActionModal = ({ type, contactId, closeModal }) => {
   };
 
   return (
-    <>
+    <BaseModal closeModal={closeModal} modalIsOpen={modalIsOpen}>
       <p>{buildModalText(type)}</p>
       <Button onClick={handleConfirmButtonClick} type="modal-window">
         {buildModalButtonText(type)}
       </Button>
-    </>
+    </BaseModal>
   );
 };
 

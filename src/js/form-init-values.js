@@ -21,8 +21,6 @@ const getInitialValues = (formType) => {
       return loginInitialValues;
     case "add-contact-form":
       return contactFormInitialValues;
-    case "update-contact-form":
-      return contactFormInitialValues;
     default:
       contactFormInitialValues;
   }

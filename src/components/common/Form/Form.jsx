@@ -6,7 +6,8 @@ import { buildFormClassName, buildButtonText } from "./FormHelpers";
 import Button from "../Button/Button";
 import FormGroup from "./FormGroup";
 
-const BaseForm = ({ onSubmit, type }) => {
+const BaseForm = ({ onSubmit, type, contactData }) => {
+  console.log(type);
   const emailId = useId();
   const passwordId = useId();
   const nameId = useId();
@@ -19,7 +20,11 @@ const BaseForm = ({ onSubmit, type }) => {
 
   return (
     <Formik
-      initialValues={getInitialValues(type)}
+      initialValues={
+        type === "update-contact-form"
+          ? { name: contactData.name, number: contactData.number }
+          : getInitialValues(type)
+      }
       validationSchema={getValidationSchema(type)}
       onSubmit={onSubmit}
     >
