@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { updateContact } from "../../redux/contacts/operations";
-import { activateErrorToast, activateSuccessToast } from "../../js/toast";
-import { addContactValidationSchema } from "../../js/validation-schemas";
-import BaseModal from "../common/Modal/Modal";
-import BaseForm from "../common/Form/Form";
+import { updateContact } from "../../../redux/contacts/operations";
+import { activateErrorToast, activateSuccessToast } from "../../../js/toast";
+import { addContactValidationSchema } from "../../../js/validation-schemas";
+import BaseModal from "../../common/Modal/Modal";
+import BaseForm from "../../common/Form/Form";
 
 const UpdateContactForm = ({
   contactData,

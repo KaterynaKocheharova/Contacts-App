@@ -1,5 +1,5 @@
-import ConfirmActionModal from "../../common/Modal/ConfirmActionModal/ConfirmActionModal";
-import UpdateContactForm from "../../UpdateContactForm/UpdateContactForm";
+import ConfirmActionModal from "../ConfirmActionModal/ConfirmActionModal";
+import UpdateContactForm from "../UpdateContactForm/UpdateContactForm";
 
 const ContactModal = ({ modalType, closeModal, modalIsOpen, contactData }) => {
   return (

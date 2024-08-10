@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import BaseModal from "../Modal";
-import Button from "../../Button/Button";
+import BaseModal from "../../common/Modal/Modal";
+import Button from "../../common/Button/Button";
 import { buildModalButtonText, buildModalText } from "./ConfirmModalHelpers";
-import { deleteContact } from "../../../../redux/contacts/operations";
-import { activateSuccessToast } from "../../../../js/toast";
+import { deleteContact } from "../../../redux/contacts/operations";
+import { activateSuccessToast } from "../../../js/toast";
 
 const ConfirmActionModal = ({ type, contactId, closeModal, modalIsOpen }) => {
   const dispatch = useDispatch();
