@@ -3,10 +3,11 @@ import css from "./Modal.module.css";
 
 Modal.setAppElement("#App");
 
-const BaseModal = ({ closeModal, modalIsOpen, children }) => {
+const BaseModal = ({ closeModal, modalIsOpen, children, modalType }) => {
+  console.log(modalType);
   return (
     <Modal
-      className={css.modal}
+      className={modalType=== "updating" ? css["form-modal"] : css.modal}
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
     >

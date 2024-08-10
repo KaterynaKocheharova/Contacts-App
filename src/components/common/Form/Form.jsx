@@ -7,7 +7,6 @@ import Button from "../Button/Button";
 import FormGroup from "./FormGroup";
 
 const BaseForm = ({ onSubmit, type, contactData }) => {
-  console.log(type);
   const emailId = useId();
   const passwordId = useId();
   const nameId = useId();

@@ -9,6 +9,7 @@ const ContactModal = ({ modalType, closeModal, modalIsOpen, contactData }) => {
           closeModal={closeModal}
           modalIsOpen={modalIsOpen}
           contactData={contactData}
+          modalType={modalType}
         />
       ) : (
         <ConfirmActionModal

@@ -5,8 +5,14 @@ import { addContactValidationSchema } from "../../js/validation-schemas";
 import BaseModal from "../common/Modal/Modal";
 import BaseForm from "../common/Form/Form";
 
-const UpdateContactForm = ({ contactData, closeModal, modalIsOpen }) => {
+const UpdateContactForm = ({
+  contactData,
+  closeModal,
+  modalIsOpen,
+  modalType,
+}) => {
   const dispatch = useDispatch();
+  console.log(modalType);
 
   const handleSubmit = (values) => {
     addContactValidationSchema
@@ -28,12 +34,16 @@ const UpdateContactForm = ({ contactData, closeModal, modalIsOpen }) => {
       })
       .finally(() => {
         closeModal();
-      })
+      });
   };
 
   return (
-    <BaseModal modalIsOpen={modalIsOpen} closeModal={closeModal}>
-      <BaseForm onSubmit={handleSubmit} type="update-contact-form" contactData={contactData} />
+    <BaseModal modalIsOpen={modalIsOpen} closeModal={closeModal} modalType={modalType}>
+      <BaseForm
+        onSubmit={handleSubmit}
+        type="update-contact-form"
+        contactData={contactData}
+      />
     </BaseModal>
   );
 };
