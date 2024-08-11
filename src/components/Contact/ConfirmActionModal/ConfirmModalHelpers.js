@@ -10,14 +10,3 @@ export const buildModalText = (type) => {
   }
 };
 
-export const buildModalButtonText = (type) => {
-  switch (type) {
-    case "confirming deletion":
-      return "delete";
-    case "confirming update":
-      return "update";
-    default:
-      return "yes, I confirm";
-  }
-};
-
