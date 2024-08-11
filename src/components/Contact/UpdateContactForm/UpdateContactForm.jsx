@@ -43,6 +43,7 @@ const UpdateContactForm = ({
         onSubmit={handleSubmit}
         type="update-contact-form"
         contactData={contactData}
+        closeModal={closeModal}
       />
     </BaseModal>
   );

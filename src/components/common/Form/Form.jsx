@@ -6,7 +6,7 @@ import { buildFormClassName, buildButtonText } from "./FormHelpers";
 import Button from "../Button/Button";
 import FormGroup from "./FormGroup";
 
-const BaseForm = ({ onSubmit, type, contactData }) => {
+const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
   const emailId = useId();
   const passwordId = useId();
   const nameId = useId();
@@ -57,8 +57,10 @@ const BaseForm = ({ onSubmit, type, contactData }) => {
         {isRegistrationForm && (
           <FormGroup id={nameId} label="Your name" name="name" type="text" />
         )}
-
         <Button>{buildButtonText(type)}</Button>
+        {type === "update-contact-form" && (
+          <Button onClick={closeModal}>BACK</Button>
+        )}
       </Form>
     </Formik>
   );
