@@ -5,6 +5,7 @@ import getInitialValues from "../../../js/form-init-values";
 import { buildFormClassName, buildButtonText } from "./FormHelpers";
 import Button from "../Button/Button";
 import FormGroup from "./FormGroup";
+import css from "./Form.module.css";
 
 const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
   const emailId = useId();
@@ -57,10 +58,12 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
         {isRegistrationForm && (
           <FormGroup id={nameId} label="Your name" name="name" type="text" />
         )}
-        <Button>{buildButtonText(type)}</Button>
-        {type === "update-contact-form" && (
-          <Button onClick={closeModal}>BACK</Button>
-        )}
+        <div className={css["button-container"]}>
+          <Button>{buildButtonText(type)}</Button>
+          {type === "update-contact-form" && (
+            <Button onClick={closeModal}>BACK</Button>
+          )}
+        </div>
       </Form>
     </Formik>
   );
