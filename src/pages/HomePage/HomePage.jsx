@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <Section type="home-page">
       <Container>
-        <Text isCentered accented>
+        <Text isCentered accented isAnimated>
           <Wave
             text={`Welcome to the contacts app!`}
             effect="verticalFadeIn"
