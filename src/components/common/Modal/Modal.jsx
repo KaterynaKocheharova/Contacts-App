@@ -10,6 +10,7 @@ const BaseModal = ({ closeModal, modalIsOpen, children, modalType }) => {
       className={modalType=== "updating" ? css["form-modal"] : css.modal}
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
+      shouldCloseOnOverlayClick={false}
     >
       {children}
     </Modal>
