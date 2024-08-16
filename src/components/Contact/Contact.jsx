@@ -9,32 +9,13 @@ import css from "./Contact.module.css";
 export default function Contact({ contactData }) {
   const { id, name, number } = contactData;
   const { modalIsOpen, openModal, closeModal } = useModal();
-  const [modalType, setModalType] = useState(""); // confirming deletion; confirming update; updating
-
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [currentContactId, setCurrentContactId] = useState(null);
-  // const [contactData, setContactData] = useState(null);
-
-  // const closeModal = () => {
-  //   setModalIsOpen(false);
-  // };
-
-  // const openModal = () => {
-  //   setModalIsOpen(true);
-  // };
-
-  // const changeCurrentId = (id) => {
-  //   setCurrentContactId(id);
-  // };
+  const [modalType, setModalType] = useState("");
 
   const handleDeleteClick = () => {
-    // setModalType("confirming deletion");
     openModal();
   };
 
-  const handleUpdateClick = (contactData) => {
-    // setContactData(contactData);
-    // setModalType("update");
+  const handleUpdateClick = () => {
     openModal();
   };
 
@@ -52,14 +33,14 @@ export default function Contact({ contactData }) {
           </div>
         </div>
         <div className={css["button-box"]}>
-          <button className={css["contact-btn"]}>
-            <FaPencilAlt
-              className={css["button-icon"]}
-              onClick={() => {
-                setModalType("updating");
-                handleUpdateClick({ id, name, number });
-              }}
-            />
+          <button
+            className={css["contact-btn"]}
+            onClick={() => {
+              setModalType("updating");
+              handleUpdateClick({ id, name, number });
+            }}
+          >
+            <FaPencilAlt className={css["button-icon"]} />
           </button>
           <button
             className={css["contact-btn"]}

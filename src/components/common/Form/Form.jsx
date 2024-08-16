@@ -21,6 +21,7 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
   return (
     <Formik
       initialValues={
+        // INTI VALUES FOR ALL FORMS ARE EMPTY INITIALLY, AND ONLY FOR THE UPDATE-FORM THEY AREN'T
         type === "update-contact-form"
           ? { name: contactData.name, number: contactData.number }
           : getInitialValues(type)
@@ -31,6 +32,7 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
       <Form className={buildFormClassName(type)}>
         {isAddContactForm && (
           <>
+            {/* FORM GROUP HAS LABEL, INPUT AND ERROR MESSAGE INSIDE */}
             <FormGroup id={nameId} label="Name" name="name" type="text" />
             <FormGroup id={numberId} label="Number" name="number" type="text" />
           </>
@@ -60,6 +62,7 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
         )}
         <div className={css["button-container"]}>
           <Button>{buildButtonText(type)}</Button>
+          {/* IF THE TYPE IS UPDATE, EXTRA BUTTON IS NEEDED*/}
           {type === "update-contact-form" && (
             <Button onClick={closeModal}>BACK</Button>
           )}

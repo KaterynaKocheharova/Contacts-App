@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { updateContact } from "../../../redux/contacts/operations";
 import { activateErrorToast, activateSuccessToast } from "../../../js/toast";
-import { addContactValidationSchema } from "../../../js/validation-schemas";
 import BaseModal from "../../common/Modal/Modal";
 import BaseForm from "../../common/Form/Form";
 
@@ -15,22 +14,13 @@ const UpdateContactForm = ({
   console.log(modalType);
 
   const handleSubmit = (values) => {
-    addContactValidationSchema
-      .validate(values)
+    dispatch(updateContact({ ...values, id: contactData.id }))
+      .unwrap()
       .then(() => {
-        dispatch(updateContact({ ...values, id: contactData.id }))
-          .unwrap()
-          .then(() => {
-            activateSuccessToast("Contact successfully updated");
-          })
-          .catch((error) => {
-            activateErrorToast(error.message);
-          });
+        activateSuccessToast("Contact successfully updated");
       })
-      .catch(() => {
-        activateErrorToast(
-          "Make sure your contact has between 3 and 50 characters and the number has a minimum of 8 characters"
-        );
+      .catch((error) => {
+        activateErrorToast(error.message);
       })
       .finally(() => {
         closeModal();
@@ -38,10 +28,16 @@ const UpdateContactForm = ({
   };
 
   return (
-    <BaseModal modalIsOpen={modalIsOpen} closeModal={closeModal} modalType={modalType}>
+    <BaseModal
+      modalIsOpen={modalIsOpen}
+      closeModal={closeModal}
+      // need to pass modal type because in case of type "updating" the styles will be different from base modal styles
+      modalType={modalType}
+    >
       <BaseForm
         onSubmit={handleSubmit}
         type="update-contact-form"
+        // contact data is only needed for updating modal to get data for init values
         contactData={contactData}
         closeModal={closeModal}
       />

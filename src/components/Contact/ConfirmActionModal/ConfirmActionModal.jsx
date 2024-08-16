@@ -20,17 +20,6 @@ const ConfirmActionModal = ({ type, contactId, closeModal, modalIsOpen }) => {
           closeModal();
         });
     }
-
-    // if (type === "update") {
-    //   dispatch(updateContact(contactData))
-    //     .unwrap()
-    //     .then(() => {
-    //       activateSuccessToast("Contact successfully updated");
-    //     })
-    //     .finally(() => {
-    //       closeModal();
-    //     });
-    // }
   };
 
   return (
