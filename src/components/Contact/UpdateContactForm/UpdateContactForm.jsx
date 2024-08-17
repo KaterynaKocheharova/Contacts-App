@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { updateContact } from "../../../redux/contacts/operations";
-import { activateErrorToast, activateSuccessToast } from "../../../js/toast";
+import { activateErrorToast, activateSuccessToast } from "../../../utils/toast";
 import BaseModal from "../../common/Modal/Modal";
 import BaseForm from "../../common/Form/Form";
 

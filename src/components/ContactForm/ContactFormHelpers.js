@@ -1,4 +1,4 @@
-import { activateErrorToast, activateSuccessToast } from "../../js/toast";
+import { activateErrorToast, activateSuccessToast } from "../../utils/toast";
 
 export const handleDuplicateContact = (duplicateContact) => {
   if (duplicateContact) {

@@ -3,7 +3,7 @@ import BaseModal from "../../common/Modal/Modal";
 import Button from "../../common/Button/Button";
 import { buildModalText } from "./ConfirmModalHelpers";
 import { deleteContact } from "../../../redux/contacts/operations";
-import { activateSuccessToast } from "../../../js/toast";
+import { activateSuccessToast } from "../../../utils/toast";
 import css from "./ConfirmActionModal.module.css";
 
 const ConfirmActionModal = ({ type, contactId, closeModal, modalIsOpen }) => {

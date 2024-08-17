@@ -29,7 +29,7 @@ export default function Contact({ contactData }) {
           </div>
           <div className={css["contact-text-box"]}>
             <CiPhone className={css["contact-phone-icon"]} />
-            <p className={css["number-text"]}>{number}</p>
+            <a href={`tel: ${number}`} className={css["number-text"]}>{number}</a>
           </div>
         </div>
         <div className={css["button-box"]}>

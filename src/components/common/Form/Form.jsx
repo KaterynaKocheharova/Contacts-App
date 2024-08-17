@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import { useId } from "react";
-import getValidationSchema from "../../../js/validation-schemas";
-import getInitialValues from "../../../js/form-init-values";
+import getValidationSchema from "./validation-schemas";
+import getInitialValues from "./form-init-values";
 import { buildFormClassName, buildButtonText } from "./FormHelpers";
 import Button from "../Button/Button";
 import FormGroup from "./FormGroup";
