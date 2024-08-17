@@ -2,7 +2,7 @@
   align-self: center;
   padding: 1.5rem;
   border: 0;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--third-color);
   background-color: var(--second-color);
   border-radius: var(--main-border-radius);
   cursor: pointer;
@@ -11,19 +11,21 @@
 
 .button:hover,
 .button:focus {
-  background-color: var(--first-color);
+  background-color: var(--third-color);
+  color: var(--first-color);
 }
 
 .auth-btn {
-  background: var(--extra-color-2);
+  background: var(--third-color);
 }
 
 .auth-btn:hover,
 .auth-btn:focus {
-  background: var(--extra-color);
+  background: var(--first-color);
 }
 
 .modal-btn {
+  background-color: var(--first-color);
   padding: 10px;
   border-radius: 10px;
 }

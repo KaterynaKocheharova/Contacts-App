@@ -29,6 +29,8 @@ const getValidationSchema = (formType) => {
       return loginValidationSchema;
     case "add-contact-form":
       return addContactValidationSchema;
+      case "update-contact-form":
+        return addContactValidationSchema;
     default:
       return null;
   }

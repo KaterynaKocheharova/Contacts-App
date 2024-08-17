@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import BaseForm from "../common/Form/Form";
-import Button from "../common/Button/Button";
 import { addContact } from "../../redux/contacts/operations";
 import { selectContacts } from "../../redux/contacts/selectors";
 import {
@@ -35,8 +34,6 @@ export default function ContactForm() {
   };
 
   return (
-    <BaseForm onSubmit={handleSubmit} type="add-contact-form">
-      <Button>Add contact</Button>
-    </BaseForm>
+    <BaseForm onSubmit={handleSubmit} type="add-contact-form"/>
   );
 }

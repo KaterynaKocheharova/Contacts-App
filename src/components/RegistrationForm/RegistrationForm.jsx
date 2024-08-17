@@ -3,7 +3,7 @@ import BaseForm from "../common/Form/Form";
 import Loader from "../common/Loader/Loader";
 import Button from "../common/Button/Button";
 import { register } from "../../redux/auth/operations";
-import { activateErrorToast } from "../../js/toast";
+import { activateErrorToast } from "../../utils/toast";
 import { selectIsAuthLoading } from "../../redux/auth/selectors";
 
 const RegistrationForm = () => {
@@ -21,9 +21,7 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      <BaseForm onSubmit={onSubmit} type="registration-form">
-        <Button type="auth">Register</Button>
-      </BaseForm>
+      <BaseForm onSubmit={onSubmit} type="registration-form" />
       {isRegisteringInProgress && (
         <Loader>Registering you. Please, wait</Loader>
       )}

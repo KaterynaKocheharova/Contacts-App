@@ -23,30 +23,32 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <Section>
-      <Container>
-        <h1 className={css["main-title"]}>
-          <Wave
-            text={`Manage your contacts here - add, update or delete them!`}
-            effect="color"
-            effectChange="var(--extra-color)"
-            speed={15}
-          />
-        </h1>
-        <div className={css["top-container"]}>
-          <ContactForm />
-          <SearchBox />
-        </div>
-        {isLoading && <Loader>{buildLoaderMessage(isLoading)}</Loader>}
-        {error && (
-          <Error>
-            Ooops. Something went wrong. Check out the internet connection or
-            try again later.
-          </Error>
-        )}
-        <ContactList />
-      </Container>
-    </Section>
+    <>
+      <Section>
+        <Container>
+          <h1 className={css["main-title"]}>
+            <Wave
+              text={`Manage your contacts here - add, update or delete them!`}
+              effect="color"
+              effectChange="var(--first-color)"
+              speed={15}
+            />
+          </h1>
+          <div className={css["top-container"]}>
+            <ContactForm />
+            <SearchBox />
+          </div>
+          {isLoading && <Loader>{buildLoaderMessage(isLoading)}</Loader>}
+          {error && (
+            <Error>
+              Ooops. Something went wrong. Check out the internet connection or
+              try again later.
+            </Error>
+          )}
+          <ContactList />
+        </Container>
+      </Section>
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ const registerInitialValues = {
   name: "",
 };
 
-const addContactFormInitialValues = {
+const contactFormInitialValues = {
   name: "",
   number: "",
 };
@@ -20,9 +20,9 @@ const getInitialValues = (formType) => {
     case "login-form":
       return loginInitialValues;
     case "add-contact-form":
-      return addContactFormInitialValues;
+      return contactFormInitialValues;
     default:
-      return null;
+      contactFormInitialValues;
   }
 };
 
