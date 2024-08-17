@@ -7,10 +7,10 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
-  background-color: var(--main-background-color);
-  border: 1px solid var(--first-color);
+  background-color: var(--second-color);
+  border: 1px solid var(--third-color);
   border-radius: var(--main-border-radius);
-  box-shadow: var(--main-box-shadow);
+  box-shadow: var(--first-box-shadow);
   overflow: hidden;
 }
 

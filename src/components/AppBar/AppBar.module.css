@@ -11,7 +11,7 @@
   padding: 1.5rem;
   border-radius: 27px;
   background-color: var(--first-color);
-  box-shadow: var(--main-box-shadow);
+  box-shadow: var(--first-box-shadow);
   font-size: 14px;
 }
 

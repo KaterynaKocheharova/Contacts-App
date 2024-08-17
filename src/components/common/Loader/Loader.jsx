@@ -7,7 +7,7 @@ const Loader = ({ children }) => {
     <div className={css.backdrop}>
       <div className={css["loader-group"]}>
         <Text isLoaderText isCentered>{children}</Text>
-        <Circles  color="rgb(140, 153, 221)" />
+        <Circles  color="var(--first-color)" />
       </div>
     </div>
   );

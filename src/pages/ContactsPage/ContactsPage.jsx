@@ -30,7 +30,7 @@ const ContactsPage = () => {
             <Wave
               text={`Manage your contacts here - add, update or delete them!`}
               effect="color"
-              effectChange="var(--extra-color)"
+              effectChange="var(--first-color)"
               speed={15}
             />
           </h1>

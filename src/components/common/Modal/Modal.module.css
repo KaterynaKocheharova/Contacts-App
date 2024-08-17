@@ -12,7 +12,7 @@
   font-size: 16px;
   border: 1px solid var(--first-color);
   border-radius: 15px;
-  box-shadow: var(--main-box-shadow);
+  box-shadow: var(--first-box-shadow);
 }
 
 .form-modal {
