@@ -4,7 +4,7 @@ import getValidationSchema from "./validation-schemas";
 import getInitialValues from "./form-init-values";
 import { buildFormClassName, buildButtonText } from "./FormHelpers";
 import Button from "../Button/Button";
-import FormGroup from "./FormGroup";
+import FormGroup from "./FormGroup/FormGroup";
 import css from "./Form.module.css";
 
 const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {

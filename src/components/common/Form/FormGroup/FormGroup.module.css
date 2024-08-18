@@ -1,0 +1,32 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.form-field {
+  max-width: 433px;
+  padding: 21px 27px 21px;
+  border-radius: 22px;
+  border: 1px solid var(--third-color);
+  box-shadow: var(--first-box-shadow);
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-field:focus,
+.form-field:active  {
+  border: 1px solid var(--first-color);
+  outline: 1px solid var(--first-color);
+}
+
+.error-message {
+  color: red;
+}
