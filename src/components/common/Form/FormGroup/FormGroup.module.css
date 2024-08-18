@@ -21,8 +21,7 @@
   white-space: nowrap;
 }
 
-.form-field:focus,
-.form-field:active  {
+.form-field:focus {
   border: 1px solid var(--first-color);
   outline: 1px solid var(--first-color);
 }
