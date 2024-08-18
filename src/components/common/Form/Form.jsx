@@ -8,6 +8,7 @@ import FormGroup from "./FormGroup";
 import css from "./Form.module.css";
 
 const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
+  // contactData is needed for update-contact form
   const emailId = useId();
   const passwordId = useId();
   const nameId = useId();
@@ -21,7 +22,9 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
   return (
     <Formik
       initialValues={
-        // INTI VALUES FOR ALL FORMS ARE EMPTY INITIALLY, AND ONLY FOR THE UPDATE-FORM THEY AREN'T
+        // init values for almaost all form they are empty initially and are taken from the function,
+        // but for update-contact form there are taken from contactData
+        // so that the user will be able to see what he's editing
         type === "update-contact-form"
           ? { name: contactData.name, number: contactData.number }
           : getInitialValues(type)
@@ -30,16 +33,9 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
       onSubmit={onSubmit}
     >
       <Form className={buildFormClassName(type)}>
-        {isAddContactForm && (
+        {(isAddContactForm || isUpdateContactForm) && (
           <>
-            {/* FORM GROUP HAS LABEL, INPUT AND ERROR MESSAGE INSIDE */}
-            <FormGroup id={nameId} label="Name" name="name" type="text" />
-            <FormGroup id={numberId} label="Number" name="number" type="text" />
-          </>
-        )}
-
-        {isUpdateContactForm && (
-          <>
+            {/* form group has a label, input, and error message inside */}
             <FormGroup id={nameId} label="Name" name="name" type="text" />
             <FormGroup id={numberId} label="Number" name="number" type="text" />
           </>
@@ -60,9 +56,10 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
         {isRegistrationForm && (
           <FormGroup id={nameId} label="Your name" name="name" type="text" />
         )}
+
         <div className={css["button-container"]}>
           <Button>{buildButtonText(type)}</Button>
-          {/* IF THE TYPE IS UPDATE, EXTRA BUTTON IS NEEDED*/}
+          {/* if type is update, extra button is needed*/}
           {type === "update-contact-form" && (
             <Button onClick={closeModal}>BACK</Button>
           )}
