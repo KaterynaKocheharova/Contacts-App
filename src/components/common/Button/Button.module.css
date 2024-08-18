@@ -1,31 +1,27 @@
 .button {
-  align-self: center;
   padding: 1.5rem;
-  border: 0;
   border: 1px solid var(--third-color);
   background-color: var(--second-color);
   border-radius: var(--main-border-radius);
+  box-shadow: var(--first-box-shadow);
   cursor: pointer;
-  transition: background-color 250ms linear;
 }
 
 .button:hover,
-.button:focus {
+.button:focus,
+.button:active {
   background-color: var(--third-color);
-  color: var(--first-color);
-}
-
-.auth-btn {
-  background: var(--third-color);
-}
-
-.auth-btn:hover,
-.auth-btn:focus {
-  background: var(--first-color);
 }
 
 .modal-btn {
-  background-color: var(--first-color);
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid var(--first-color);
+  transition: none;
+}
+
+.modal-btn:hover,
+.modal-btn:focus,
+.modal-btn:active {
+  background-color: var(--first-color);
 }

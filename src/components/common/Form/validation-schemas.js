@@ -1,16 +1,17 @@
 import * as Yup from "yup";
 
-const loginValidationSchema = Yup.object().shape({
+const authValidationSchemaBase = {
   email: Yup.string().email("Invalid email").required("Required"),
   password: Yup.string()
     .required("Required")
     .min(8, "Password is too short - should be 8 chars minimum."),
-});
+};
+
+const loginValidationSchema = Yup.object().shape(authValidationSchemaBase);
 
 const registerValidationSchema = Yup.object().shape({
+  ...authValidationSchemaBase,
   name: Yup.string().required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().required("Required"),
 });
 
 export const addContactValidationSchema = Yup.object().shape({
@@ -29,8 +30,8 @@ const getValidationSchema = (formType) => {
       return loginValidationSchema;
     case "add-contact-form":
       return addContactValidationSchema;
-      case "update-contact-form":
-        return addContactValidationSchema;
+    case "update-contact-form":
+      return addContactValidationSchema;
     default:
       return null;
   }
