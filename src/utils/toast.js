@@ -26,11 +26,11 @@ const removeToastClickHandler = () => {
   document.removeEventListener("click", removeToastClickHandler);
 };
 
-export const activateErrorToast = (error, formType) => {
-  const message = getErrorMessage(error, formType);
-  toastId = toast.error(message, globalParams);
-  document.addEventListener("click", removeToastClickHandler);
-};
+// export const activateErrorToast = (error, formType) => {
+//   const message = getErrorMessage(error, formType);
+//   toastId = toast.error(message, globalParams);
+//   document.addEventListener("click", removeToastClickHandler);
+// };
 
 export const activateErrorToastWithCustomMessage = (message) => {
   toastId = toast.error(message);
@@ -60,5 +60,11 @@ const getErrorMessage = (error, formType) => {
 
 export const activateSuccessToast = (message) => {
   toastId = toast.success(message, globalParams);
+  document.addEventListener("click", removeToastClickHandler);
+};
+
+
+export const activateErrorToast = (message) => {
+  toastId = toast.error(message, globalParams);
   document.addEventListener("click", removeToastClickHandler);
 };

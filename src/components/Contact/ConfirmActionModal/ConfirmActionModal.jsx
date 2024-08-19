@@ -20,6 +20,7 @@ const ConfirmActionModal = ({ type, contactId, closeModal, modalIsOpen }) => {
           closeModal();
         });
     }
+    // later code can be expanded if we need other modal types
   };
 
   return (

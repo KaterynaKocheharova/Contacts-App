@@ -11,7 +11,6 @@ const UpdateContactForm = ({
   modalType,
 }) => {
   const dispatch = useDispatch();
-  console.log(modalType);
 
   const handleSubmit = (values) => {
     dispatch(updateContact({ ...values, id: contactData.id }))
@@ -37,7 +36,6 @@ const UpdateContactForm = ({
       <BaseForm
         onSubmit={handleSubmit}
         type="update-contact-form"
-        // contact data is only needed for updating modal to get data for init values
         contactData={contactData}
         closeModal={closeModal}
       />
