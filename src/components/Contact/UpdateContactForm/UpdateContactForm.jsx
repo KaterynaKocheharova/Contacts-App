@@ -1,4 +1,5 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectContacts } from "../../../redux/contacts/selectors";
 import { updateContact } from "../../../redux/contacts/operations";
 import { activateErrorToast, activateSuccessToast } from "../../../utils/toast";
 import BaseModal from "../../common/Modal/Modal";
@@ -11,8 +12,21 @@ const UpdateContactForm = ({
   modalType,
 }) => {
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = (values) => {
+    const duplicateNumber = contacts.find((item) => {
+      if (item.id === contactData.id) {
+        return false;
+      }
+      return values.number === item.number;
+    });
+
+    if (duplicateNumber) {
+      activateErrorToast("Contact with this number already exists");
+      return;
+    }
+
     dispatch(updateContact({ ...values, id: contactData.id }))
       .unwrap()
       .then(() => {
