@@ -6,8 +6,10 @@
   align-items: center;
 }
 
-.logout-link {
-  display: block;
+.logout-button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
   cursor: pointer;
 }
 

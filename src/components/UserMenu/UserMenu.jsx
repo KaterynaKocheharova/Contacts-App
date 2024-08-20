@@ -14,9 +14,9 @@ const UserMenu = () => {
   return (
     <div className={css["user-menu-container"]}>
       <p className={css["user-menu-text"]}>Welcome, {username}!</p>
-      <a className={css["logout-link"]} onClick={handlelogOutClick}>
+      <button className={css["logout-button"]} onClick={handlelogOutClick}>
         <IoIosLogOut className={css["logout-icon"]} />
-      </a>
+      </button>
     </div>
   );
 };
