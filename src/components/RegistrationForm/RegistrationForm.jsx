@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import BaseForm from "../common/Form/Form";
 import Loader from "../common/Loader/Loader";
-import Button from "../common/Button/Button";
 import { register } from "../../redux/auth/operations";
-import { activateErrorToast } from "../../utils/toast";
+import { activateErrorToast, activateSuccessToast } from "../../utils/toast";
 import { selectIsAuthLoading } from "../../redux/auth/selectors";
 
 const RegistrationForm = () => {
@@ -14,8 +13,13 @@ const RegistrationForm = () => {
   const onSubmit = (values) => {
     dispatch(register(values))
       .unwrap()
+      .then(() => {
+        activateSuccessToast("Welcome!");
+      })
       .catch((error) => {
-        activateErrorToast(error, "register");
+        if (error === "Request failed with status code 400") {
+          activateErrorToast("Seems the email is already in use");
+        }
       });
   };
 
