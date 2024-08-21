@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { selectError, selectIsLoading } from "../../redux/contacts/selectors";
+import { fetchContacts } from "../../redux/contacts/operations";
+import { buildLoaderMessage } from "./contactsPageHelpers";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import ContactForm from "../../components/ContactForm/ContactForm";
@@ -8,10 +11,7 @@ import ContactList from "../../components/ContactList/ContactList";
 import Error from "../../components/common/Error/Error";
 import Loader from "../../components/common/Loader/Loader";
 import { Wave } from "react-animated-text";
-import { selectError, selectIsLoading } from "../../redux/contacts/selectors";
-import { fetchContacts } from "../../redux/contacts/operations";
 import css from "./ContactsPage.module.css";
-import { buildLoaderMessage } from "./contactsPageHelpers";
 
 const ContactsPage = () => {
   const error = useSelector(selectError);
