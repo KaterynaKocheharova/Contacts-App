@@ -1,21 +1,18 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectError, selectIsLoading } from "../../redux/contacts/selectors";
+import { selectError} from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
-import { buildLoaderMessage } from "./contactsPageHelpers";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
 import Error from "../../components/common/Error/Error";
-import Loader from "../../components/common/Loader/Loader";
 import { Wave } from "react-animated-text";
 import css from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const error = useSelector(selectError);
-  const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,7 +35,6 @@ const ContactsPage = () => {
             <ContactForm />
             <SearchBox />
           </div>
-          {isLoading && <Loader>{buildLoaderMessage(isLoading)}</Loader>}
           {error && (
             <Error>
               Ooops. Something went wrong. Check out the internet connection or

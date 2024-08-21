@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import AppBar from "./AppBar/AppBar";
-import Loader from "../components/common/Loader/Loader";
+import Loader from "./common/Loader/Loader";
+
+// render loader here, account for the type loading page
 
 const Layout = ({ children }) => {
   return (
     <div>
       <AppBar />
-      <Suspense fallback={<Loader>Loading page. Please, wait.</Loader>}>{children}</Suspense>
+      <Suspense fallback={<Loader type="loading page"/>}>{children}</Suspense>
     </div>
   );
 };

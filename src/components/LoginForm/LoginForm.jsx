@@ -1,13 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 import { activateErrorToast, activateSuccessToast } from "../../utils/toast";
-import { selectIsAuthLoading } from "../../redux/auth/selectors";
 import BaseForm from "../common/Form/Form";
-import Loader from "../common/Loader/Loader";
 
 const LoginForm = () => {
-  const isLoading = useSelector(selectIsAuthLoading);
-  const isLoginingInProgress = isLoading === "logining";
   const dispatch = useDispatch();
 
   const onSubmit = (values) => {
@@ -26,9 +22,6 @@ const LoginForm = () => {
   return (
     <div>
       <BaseForm onSubmit={onSubmit} type="login-form" />
-      {isLoginingInProgress && (
-        <Loader>Logining in progress. Please, wait.</Loader>
-      )}
     </div>
   );
 };

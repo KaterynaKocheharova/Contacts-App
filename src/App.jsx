@@ -6,7 +6,6 @@ import RestrictedRoute from "./RestrictedRoute";
 import PrivateRoute from "./PrivateRoute";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsAuthLoading } from "./redux/auth/selectors";
-import Loader from "./components/common/Loader/Loader";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() => import("./pages/RegistrationPage/RegistrationPage"));
@@ -25,11 +24,6 @@ export default function App() {
 
   return (
     <div id="App">
-      {isRefreshing ? (
-        <Loader>Refreshing your info. Please, wait.</Loader>
-      ) : isLoginingOut ? ( 
-        <Loader>Logining out. Please, wait.</Loader>
-      ) : (
         <Suspense fallback={null}>
           <Layout>
             <Routes>
