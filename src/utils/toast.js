@@ -11,7 +11,7 @@ const ALREADY_HAVE_NUMBER =
   "Oh. It seems you already have a contact with this number. If you want to change the name for it, consider updating a contact, not creating a new one";
 
 const globalParams = {
-  duration: Infinity,
+  duration: 5000,
   position: "top-right",
 };
 
