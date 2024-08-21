@@ -2,13 +2,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../redux/auth/operations";
 import { selectUser } from "../../redux/auth/selectors";
 import { IoIosLogOut } from "react-icons/io";
+import { activateSuccessToast } from "../../utils/toast";
 import css from "./UserMenu.module.css";
 
 const UserMenu = () => {
   const username = useSelector(selectUser).name;
   const dispatch = useDispatch();
   const handlelogOutClick = () => {
-    dispatch(logOut());
+    dispatch(logOut()).then(() => {
+      activateSuccessToast("Your're logged out successfully");
+    });
   };
 
   return (
