@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <AppBar />
-      <Suspense fallback={<Loader type="loading page"/>}>{children}</Suspense>
+      <Suspense fallback={<Loader/>}>{children}</Suspense>
       <Loader/>
     </div>
   );
