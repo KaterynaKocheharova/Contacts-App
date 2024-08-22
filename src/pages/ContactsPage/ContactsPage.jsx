@@ -20,7 +20,6 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
       <Section>
         <Container>
           <h1 className={css["main-title"]}>
@@ -44,7 +43,6 @@ const ContactsPage = () => {
           <ContactList />
         </Container>
       </Section>
-    </>
   );
 };
 

@@ -11,11 +11,10 @@ const HomePage = () => {
           <Wave
             text={`Welcome to the contacts app!`}
             effect="verticalFadeIn"
-           
           />
         </Text>
         <Text isCentered>
-          You can register, log in, and start keeping your contacts here.
+          You can register, log in, and conveniently keep your contacts here.
         </Text>
       </Container>
     </Section>
