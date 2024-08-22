@@ -4,7 +4,6 @@ import css from "./Modal.module.css";
 Modal.setAppElement("#App");
 
 const BaseModal = ({ closeModal, modalIsOpen, children, modalType }) => {
-  console.log(modalType);
   return (
     <Modal
     // all modals have identical styles except for the one that has form updating contact form inside
