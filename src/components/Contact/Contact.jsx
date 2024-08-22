@@ -3,13 +3,22 @@ import { MdDeleteOutline } from "react-icons/md";
 import { FaPencilAlt } from "react-icons/fa";
 import { CiUser, CiPhone } from "react-icons/ci";
 import ContactModal from "./ContactModal/ContactModal";
-import { useModal } from "../../hooks/useModal";
 import css from "./Contact.module.css";
 
 export default function Contact({ contactData }) {
   const { name, number } = contactData;
-  const { modalIsOpen, openModal, closeModal } = useModal();
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [modalType, setModalType] = useState("");
+
+  function openModal() {
+    setIsOpen(true);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
+  }
 
   const handleDeleteClick = () => {
     setModalType("confirming deletion");
