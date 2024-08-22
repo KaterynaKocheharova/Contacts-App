@@ -1,6 +1,7 @@
-import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
-import Container from "../../components/common/Container/Container";
 import Section from "../../components/common/Section/Section";
+import Container from "../../components/common/Container/Container";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+
 
 const RegistrationPage = () => {
   return (

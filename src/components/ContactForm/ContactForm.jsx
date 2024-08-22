@@ -2,38 +2,30 @@ import { useDispatch, useSelector } from "react-redux";
 import BaseForm from "../common/Form/Form";
 import { addContact } from "../../redux/contacts/operations";
 import { selectContacts } from "../../redux/contacts/selectors";
-import {
-  handleDuplicateContact,
-  handleDuplicateNumber,
-  handleContactCreationError,
-  handleSuccessfulContactCreating,
-} from "./ContactFormHelpers";
+import { activateSuccessToast, activateErrorToast } from "../../utils/toast";
 
 export default function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
   const handleSubmit = async (values, actions) => {
-    const duplicateContact = contacts.find(
-      (item) => values.name === item.name && values.number === item.number
-    );
-    if (handleDuplicateContact(duplicateContact)) return;
-
     const duplicateNumber = contacts.find(
       (item) => values.number === item.number
     );
-    if (handleDuplicateNumber(duplicateNumber)) return;
+
+    if (duplicateNumber) {
+      activateErrorToast("Contact with this number already exists");
+      return;
+    }
 
     try {
       await dispatch(addContact(values)).unwrap();
-      handleSuccessfulContactCreating();
+      activateSuccessToast("Successfully created contact!");
       actions.resetForm();
     } catch (error) {
-      handleContactCreationError(error);
+      activateErrorToast(error.message);
     }
   };
 
-  return (
-    <BaseForm onSubmit={handleSubmit} type="add-contact-form"/>
-  );
+  return <BaseForm onSubmit={handleSubmit} type="add-contact-form" />;
 }
