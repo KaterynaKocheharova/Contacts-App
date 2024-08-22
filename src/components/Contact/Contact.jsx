@@ -3,7 +3,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { FaPencilAlt } from "react-icons/fa";
 import { CiUser, CiPhone } from "react-icons/ci";
 import ContactModal from "./ContactModal/ContactModal";
-import { useModal } from "../../hooks/UseModal";
+import { useModal } from "../../hooks/useModal";
 import css from "./Contact.module.css";
 
 export default function Contact({ contactData }) {
