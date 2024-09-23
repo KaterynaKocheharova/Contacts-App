@@ -4,9 +4,8 @@
   flex-direction: column;
   row-gap: 3rem;
   padding: 2rem;
-  box-shadow: var(--first-box-shadow);
-  border-radius: 62px;
-  border: 1px solid var(--third-color);
+  border-radius: var(--main-border-radius);
+  border: 1px solid var(--second-color);
   background-color: var(--second-color);
 }
 

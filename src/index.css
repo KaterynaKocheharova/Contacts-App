@@ -1,20 +1,16 @@
 :root {
-  --main-border-radius: 20px;
-  --first-box-shadow: 2px 3px 3px 0px rgba(255, 153, 102, 0.25);
-
-
+  --main-border-radius: 5px;
   /* OPTION PALETTE */
-  --first-color: rgb(255, 153, 102); 
-  --second-color:  rgb(255, 255, 255); 
-  --third-color: rgb(221, 221, 221); 
-
-  --input-border-radius: 22px;
+  --first-color: #230c33;
+  --second-color: #9984D4;
+  --third-color:  #c7b6f1;
+  --bg-color: #0e0b15;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--second-color);
-  color: rgba(1, 1, 1, 0.8);
+  background-color: var(--bg-color);
+  color: var(--second-color);
   line-height: 1.5;
   letter-spacing: 0.03em;
   font-size: 14px;
@@ -56,18 +52,3 @@ a {
   color: inherit;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    border: 1px solid your-desired-border-color !important;
-    -webkit-text-fill-color: your-desired-text-color !important;
-    -webkit-box-shadow: 0 0 0px 1000px your-background-color inset !important;
-    box-shadow: 0 0 0px 1000px your-background-color inset !important;
-    transition: background-color 5000s ease-in-out 0s !important;
-}

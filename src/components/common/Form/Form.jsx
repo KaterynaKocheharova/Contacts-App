@@ -36,25 +36,50 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
         {(isAddContactForm || isUpdateContactForm) && (
           <>
             {/* form group has a label, input, and error message inside */}
-            <FormGroup id={nameId} label="Name" name="name" type="text" />
-            <FormGroup id={numberId} label="Number" name="number" type="text" />
+            <FormGroup
+              id={nameId}
+              label="Name"
+              name="name"
+              type="text"
+              placeholder="Olga"
+            />
+            <FormGroup
+              id={numberId}
+              label="Number"
+              name="number"
+              type="tel"
+              placeholder="+380950066297"
+            />
           </>
         )}
 
         {(isRegistrationForm || isLoginForm) && (
           <>
-            <FormGroup id={emailId} label="Email" name="email" type="email" />
+            <FormGroup
+              id={emailId}
+              label="Email"
+              name="email"
+              type="email"
+              placeholder="example@gmail.com"
+            />
             <FormGroup
               id={passwordId}
               label="Password"
               name="password"
               type="password"
+              placeholder="your password"
             />
           </>
         )}
 
         {isRegistrationForm && (
-          <FormGroup id={nameId} label="Your name" name="name" type="text" />
+          <FormGroup
+            id={nameId}
+            label="Your name"
+            name="name"
+            type="text"
+            placeholder="Olga"
+          />
         )}
 
         <div className={css["button-container"]}>

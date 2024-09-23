@@ -1,6 +1,7 @@
 .link {
   padding: 0.5rem;
   border-radius: 5px;
+  color: var(--second-color);
   border: 1px solid var(--second-color);
 }
 
@@ -11,5 +12,6 @@
 }
 
 .active-link {
+  color: var(--first-color);
   background-color: var(--second-color);
 }

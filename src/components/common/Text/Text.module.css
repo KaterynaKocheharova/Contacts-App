@@ -14,7 +14,7 @@
 }
 
 .accented {
-  color: var(--first-color);
+  color: var(--third-color);
   font-size: 20px;
 }
 
@@ -25,6 +25,7 @@
 }
 
 .loader-text {
+  color: var(--first-color);
   font-size: 30px;
   font-weight: 500;
 }

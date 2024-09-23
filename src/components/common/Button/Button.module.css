@@ -1,16 +1,16 @@
 .button {
   padding: 1.5rem;
-  border: 1px solid var(--third-color);
+  border: 1px solid var(--first-color);
   background-color: var(--second-color);
   border-radius: var(--main-border-radius);
-  box-shadow: var(--first-box-shadow);
   cursor: pointer;
 }
 
 .button:hover,
 .button:focus,
 .button:active {
-  background-color: var(--third-color);
+  color: var(--second-color);
+  background-color: var(--first-color);
 }
 
 .modal-btn {

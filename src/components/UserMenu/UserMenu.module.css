@@ -22,6 +22,7 @@
 @media screen and (min-width: 900px) {
   .user-menu-container .logout-icon {
     display: block;
+    color: var(--second-color);
     width: 2rem;
     height: 2rem;
   }

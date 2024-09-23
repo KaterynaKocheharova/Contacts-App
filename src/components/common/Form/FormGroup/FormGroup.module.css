@@ -5,6 +5,7 @@
 }
 
 .label {
+  color: var(--first-color);
   font-weight: 500;
   font-size: 18px;
 }
@@ -12,13 +13,17 @@
 .form-field {
   max-width: 433px;
   padding: 21px 27px 21px;
-  border-radius: 22px;
-  border: 1px solid var(--third-color);
-  box-shadow: var(--first-box-shadow);
+  border-radius: var(--main-border-radius);
+  background-color: var(--third-color);
+  border: 1px solid var(--first-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.form-field::placeholder {
+  color: var(--second-color);
 }
 
 .form-field:focus {

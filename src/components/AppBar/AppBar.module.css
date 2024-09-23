@@ -9,9 +9,8 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1.5rem;
-  border-radius: 27px;
+  color: var(--second-color);
   background-color: var(--first-color);
-  box-shadow: var(--first-box-shadow);
   font-size: 14px;
 }
 
