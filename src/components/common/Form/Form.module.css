@@ -6,7 +6,7 @@
   padding: 2rem;
   border-radius: var(--main-border-radius);
   box-shadow: var(--second-color-shadow);
-  /* border: 1px solid var(--second-color); */
+  background-color: var(--first-color) !important;
   background-color: transparent;
 }
 
