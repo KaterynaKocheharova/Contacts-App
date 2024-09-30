@@ -41,14 +41,14 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
               label="Name"
               name="name"
               type="text"
-              placeholder="Olga"
+              placeholder="name"
             />
             <FormGroup
               id={numberId}
               label="Number"
               name="number"
               type="tel"
-              placeholder="+380950066297"
+              placeholder="+phone number"
             />
           </>
         )}

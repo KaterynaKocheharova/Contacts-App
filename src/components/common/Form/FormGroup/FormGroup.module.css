@@ -25,6 +25,7 @@
 }
 
 .form-field::placeholder {
+  font-size: 14px;
   color: var(--second-color);
 }
 
