@@ -1,9 +1,12 @@
 :root {
   --main-border-radius: 5px;
   --first-color: #230c33;
-  --second-color: #9984D4;
-  --third-color:  #c7b6f1;
+  --second-color: #9289a8;
+  --second-color-shadow: 0px 0px 8px var(--second-color, #9289a8);
+  --third-color: #c7b6f1;
   --bg-color: #0e0b15;
+  --error-color: color: rgb(105, 14, 14);
+
 }
 
 body {
@@ -50,4 +53,3 @@ a {
   text-decoration: none;
   color: inherit;
 }
-

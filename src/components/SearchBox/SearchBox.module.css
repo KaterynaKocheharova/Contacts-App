@@ -11,9 +11,10 @@
   padding: 0.7rem;
   background-color: transparent;
   border-radius: var(--main-border-radius);
-  border: 1px solid var(--third-color);
+  box-shadow: var(--second-color-shadow);
   color: var(--third-color);
   transition: border;
+  border: none;
 }
 
 @media screen and (min-width: 500px) {
@@ -23,6 +24,5 @@
 }
 
 .filter-input:focus {
-  border: 3px solid var(--second-color);
   outline: none;
 }

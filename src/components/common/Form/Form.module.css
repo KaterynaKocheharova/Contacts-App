@@ -5,8 +5,9 @@
   row-gap: 3rem;
   padding: 2rem;
   border-radius: var(--main-border-radius);
-  border: 1px solid var(--second-color);
-  background-color: var(--second-color);
+  box-shadow: var(--second-color-shadow);
+  /* border: 1px solid var(--second-color); */
+  background-color: transparent;
 }
 
 @media screen and (min-width: 600px) {
