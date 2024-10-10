@@ -1,0 +1,32 @@
+.list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.icon {
+  fill: var(--third-color);
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.medium {
+  width: 40px;
+  height: 40px;
+}
+
+.large {
+  width: 70px;
+  height: 70px;
+}
