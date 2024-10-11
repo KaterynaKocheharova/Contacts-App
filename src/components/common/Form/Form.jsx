@@ -48,7 +48,7 @@ const BaseForm = ({ onSubmit, type, contactData, closeModal }) => {
               label="Number"
               name="number"
               type="tel"
-              placeholder="+phone number"
+              placeholder="phone number"
             />
           </>
         )}
