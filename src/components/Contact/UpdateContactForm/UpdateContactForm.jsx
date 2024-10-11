@@ -14,7 +14,7 @@ const UpdateContactForm = ({
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  // TO DO - REMOVE THIS LOGIC TO THE CONFIRM ACTION MODAL, MAYBE PASS THE FUNCTION ITSELF
+  // TO DO - REMOVE THIS LOGIC TO THE CONFIRM ACTION MODAL
   const handleSubmit = (values) => {
     const duplicateNumber = contacts.find((item) => {
       if (item.id === contactData.id) {
