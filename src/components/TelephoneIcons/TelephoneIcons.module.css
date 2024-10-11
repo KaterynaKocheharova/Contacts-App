@@ -4,6 +4,17 @@
   align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+  .list {
+    gap: 5rem;
+  }
+}
+
+.home-list {
+  justify-content: space-between;
+  align-items: center;
+}
+
 .row {
   flex-direction: row;
 }
@@ -13,7 +24,7 @@
 }
 
 .icon {
-  fill: var(--third-color);
+  stroke: var(--third-color);
 }
 
 .small {
@@ -22,11 +33,11 @@
 }
 
 .medium {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .large {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
 }

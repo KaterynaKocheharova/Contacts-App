@@ -12,11 +12,11 @@ const AppBar = () => {
     <header className={css.header}>
       <div className={css["app-bar"]}>
         <Navigation />
-        {/* <TelephoneIcons
+        <TelephoneIcons
           iconsNumber={3}
           iconsListClass="row"
           iconClass="medium"
-        /> */}
+        />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </div>
     </header>
