@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { selectContacts } from "../../../redux/contacts/selectors";
-import { updateContact } from "../../../redux/contacts/operations";
-import { activateErrorToast, activateSuccessToast } from "../../../utils/toast";
+import { activateErrorToast } from "../../../utils/toast";
 import BaseModal from "../../common/Modal/Modal";
 import BaseForm from "../../common/Form/Form";
+import ConfirmActionModal from "../ConfirmActionModal/ConfirmActionModal";
 
 const UpdateContactForm = ({
   contactData,
@@ -11,10 +12,15 @@ const UpdateContactForm = ({
   modalIsOpen,
   modalType,
 }) => {
-  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  // TO DO - REMOVE THIS LOGIC TO THE CONFIRM ACTION MODAL
+  const [values, setValues] = useState(null);
+  const [confirmingModalIsOpen, setModalIsOpen] = useState(false);
+
+  const closeConfirmingModal = () => {
+    setModalIsOpen(false);
+  };
+
   const handleSubmit = (values) => {
     const duplicateNumber = contacts.find((item) => {
       if (item.id === contactData.id) {
@@ -27,34 +33,35 @@ const UpdateContactForm = ({
       activateErrorToast("Contact with this number already exists");
       return;
     }
-
-    dispatch(updateContact({ ...values, id: contactData.id }))
-      .unwrap()
-      .then(() => {
-        activateSuccessToast("Contact successfully updated");
-      })
-      .catch((error) => {
-        activateErrorToast(error.message);
-      })
-      .finally(() => {
-        closeModal();
-      });
+    setValues(values);
+    setModalIsOpen(true);
   };
 
   return (
-    <BaseModal
-      modalIsOpen={modalIsOpen}
-      closeModal={closeModal}
-      // need to pass modal type because in case of type "updating" the styles will be different from base modal styles
-      modalType={modalType}
-    >
-      <BaseForm
-        onSubmit={handleSubmit}
-        type="update-contact-form"
-        contactData={contactData}
+    <>
+      <BaseModal
+        modalIsOpen={modalIsOpen}
         closeModal={closeModal}
-      />
-    </BaseModal>
+        modalType={modalType}
+      >
+        <BaseForm
+          onSubmit={handleSubmit}
+          type="update-contact-form"
+          contactData={contactData}
+          closeModal={closeModal}
+        />
+      </BaseModal>
+      {values && (
+        <ConfirmActionModal
+        closeUpdatingModal={closeModal}
+          closeModal={closeConfirmingModal}
+          modalIsOpen={confirmingModalIsOpen}
+          type="confirming update"
+          values={values}
+          contactData={contactData}
+        />
+      )}
+    </>
   );
 };
 

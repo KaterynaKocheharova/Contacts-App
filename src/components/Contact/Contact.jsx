@@ -30,8 +30,6 @@ export default function Contact({ contactData }) {
     openModal();
   };
 
-  // add consfirming deletion click handler
-
   return (
     <>
       <li className={css["contact-item"]}>
