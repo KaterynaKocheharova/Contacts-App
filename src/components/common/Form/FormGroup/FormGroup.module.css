@@ -22,7 +22,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--second-color);
+  color: var(--third-color);
 }
 
 .form-field::placeholder {
@@ -32,7 +32,7 @@
 
 .error-message {
   position: absolute;
-  bottom:-20px;
+  bottom: -20px;
   left: 0;
   color: var(--error-color);
 }
