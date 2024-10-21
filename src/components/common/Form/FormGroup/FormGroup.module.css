@@ -36,3 +36,16 @@
   left: 0;
   color: var(--error-color);
 }
+
+.toggle-show-password-button {
+  position: absolute;
+  right: 16px;
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+.eye {
+  width: 24px;
+  height: 24px;
+  color: var(--third-color);
+}
